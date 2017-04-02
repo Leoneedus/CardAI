@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CardAI.DataStructures;
+using CardAI.Game;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +12,8 @@ namespace CardAI
     {
         static void Main(string[] args)
         {
+            Game.Game game = new Game.Game();
+            game.Run();
         }
     }
 }
