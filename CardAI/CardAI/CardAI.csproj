@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AI\Entity.cs" />
     <Compile Include="DataStructures\Card.cs" />
+    <Compile Include="DataStructures\CardSorter.cs" />
     <Compile Include="DataStructures\Deck.cs" />
     <Compile Include="Game\DeckManager.cs" />
     <Compile Include="Game\Game.cs" />

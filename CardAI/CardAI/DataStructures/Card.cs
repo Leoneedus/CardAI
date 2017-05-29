@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CardAI.DataStructures
 {
-    class Card
+    public class Card : IComparable<Card>
     {
         Sign sign;
         Colour colour;
@@ -47,6 +47,22 @@ namespace CardAI.DataStructures
             text = sign.ToString() + " " + colour.ToString();
             return text;
         }
+
+        public int CompareTo(Card other)
+        {
+            if (this.sign.CompareTo(other.sign) != 0)
+            {
+                return this.sign.CompareTo(other.sign);
+            }
+            else if (this.colour.CompareTo(other.colour) != 0)
+            {
+                return this.colour.CompareTo(other.colour);
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 
     public enum Sign
@@ -66,4 +82,6 @@ namespace CardAI.DataStructures
         Clubs,
         Spades
     }
+
+    
 }

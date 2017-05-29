@@ -30,8 +30,9 @@ namespace CardAI.AI
                 Console.Write(card.ToString() + " | ");
         }
 
-        void SortHand()
+        public void SortHand()
         {
+            hand.Sort(new CardSorter());
             //hand = hand.OrderBy(s => s.Colour).ThenBy(s => s.Sign);
         }
     }

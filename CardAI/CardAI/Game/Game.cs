@@ -32,7 +32,8 @@ namespace CardAI.Game
             foreach (Entity player in players)
             {
                 Console.WriteLine();
-                player.printHand();
+                player.SortHand();
+                player.PrintHand();
             }
             Console.ReadKey();
         }
