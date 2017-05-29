@@ -30,7 +30,7 @@ namespace CardAI.DataStructures
             string text = "";
             for(int i = 0; i < cards.Count; i++)
             {
-                text += cards[i].ToString() + "    ";
+                text += cards[i].ToString() + "     ";
                 if ((i + 1) % 4 == 0)
                     text += "\n";
             }

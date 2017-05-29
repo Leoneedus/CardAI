@@ -18,7 +18,7 @@ namespace CardAI.Game
             deck = new Deck();
             for(int i = 0; i < 4; i++)
             {
-                players.Add(new Entity());
+                players.Add(new Entity("player_" + i));
             }
         }
 
@@ -29,6 +29,11 @@ namespace CardAI.Game
             Console.WriteLine();
             HandOutCards();
             Console.Write(deck.ToString());
+            foreach (Entity player in players)
+            {
+                Console.WriteLine();
+                player.printHand();
+            }
             Console.ReadKey();
         }
 

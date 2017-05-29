@@ -19,6 +19,20 @@ namespace CardAI.DataStructures
                 return value;
             }
         }
+        public Sign Sign
+        {
+            get
+            {
+                return sign;
+            }
+        }
+        public Colour Colour
+        {
+            get
+            {
+                return colour;
+            }
+        }
 
         public Card(Sign sign, Colour colour)
         {
