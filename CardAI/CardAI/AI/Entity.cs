@@ -1,4 +1,5 @@
 ﻿using CardAI.DataStructures;
+using CardAI.Game;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,11 +8,17 @@ using System.Threading.Tasks;
 
 namespace CardAI.AI
 {
-    class Entity
+    public class Entity
     {
         string name;
+        Table table;
         List<Card> hand = new List<Card>();
         List<Card> collected = new List<Card>();
+
+        public string Name
+        {
+            get { return name; }
+        }
 
         public List<Card> Hand
         {
@@ -33,7 +40,18 @@ namespace CardAI.AI
         public void SortHand()
         {
             hand.Sort(new CardSorter());
-            //hand = hand.OrderBy(s => s.Colour).ThenBy(s => s.Sign);
+        }
+
+        protected void ThrowCard(Card card)
+        {
+            table.Heap.Add(card);
+            hand.Remove(card);
+        }
+
+        protected void GrabCards()
+        {
+            collected.AddRange(table.Heap);
+            table.Heap.Clear();
         }
     }
 }

@@ -12,6 +12,8 @@ namespace CardAI.Game
     {
         Deck deck;
         List<Entity> players = new List<Entity>();
+        public Colour? Favour;
+
 
         public Game()
         {
@@ -32,6 +34,7 @@ namespace CardAI.Game
             foreach (Entity player in players)
             {
                 Console.WriteLine();
+                Console.WriteLine(player.Name);
                 player.SortHand();
                 player.PrintHand();
             }
@@ -42,6 +45,7 @@ namespace CardAI.Game
         {
             for (int i = 0; i < deck.Cards.Count - 3; i++)
             {
+                deck.Cards[i].Owner = players[i % 3];
                 players[i % 3].Hand.Add(deck.Cards[i]); 
             }
 
@@ -49,6 +53,11 @@ namespace CardAI.Game
             {
                 players[3].Hand.Add(deck.Cards[i]);
             }
+        }
+
+        private void Auction()
+        {
+
         }
     }
 }

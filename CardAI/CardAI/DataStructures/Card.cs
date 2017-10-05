@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CardAI.AI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,10 @@ namespace CardAI.DataStructures
 {
     public class Card : IComparable<Card>
     {
-        Sign sign;
-        Colour colour;
-        int value;
+        private Sign sign;
+        private Colour colour;
+        private int value;
+        private Entity owner;
 
         public int Value
         {
@@ -33,12 +35,18 @@ namespace CardAI.DataStructures
                 return colour;
             }
         }
+        public Entity Owner
+        {
+            get { return owner; }
+            set { owner = value; }
+        }
 
         public Card(Sign sign, Colour colour)
         {
             this.sign = sign;
             this.colour = colour;
             value = (int)sign;
+            this.owner = owner;
         }
 
         public override string ToString()
